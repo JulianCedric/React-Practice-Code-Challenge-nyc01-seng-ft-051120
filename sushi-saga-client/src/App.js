@@ -8,10 +8,11 @@ import Table from './containers/Table';
 class App extends Component {
 
   state = {
-    sushis: []
+    sushis: [],
+    mySushiBudget: null
   }
 
-  // replaced getSushi() with componentDidMount()
+  // replaced getSushi() with componentDidMount() to properly fetch sushis object from server
 
   componentDidMount(){
     fetch("http://localhost:3000/sushis")
@@ -19,6 +20,15 @@ class App extends Component {
     .then(sushis => 
       this.setState({sushis}, () => console.log(this.state.sushis)))
   }
+
+  updateMySushiBudget = () => {
+     // this.setState({sushis:{
+    // ...this.state.sushis, 
+      // price: mySushiBudget-price
+  // }})
+  }
+
+ 
 
   render() {
     return (
