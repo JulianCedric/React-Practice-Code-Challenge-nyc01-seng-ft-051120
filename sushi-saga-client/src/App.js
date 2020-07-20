@@ -9,7 +9,7 @@ class App extends React.Component {
 
   state = {
     sushis: [],
-    mySushiBudget: 100
+    mySushiBudget: 100,
     eaten: null
   }
 
@@ -24,7 +24,7 @@ class App extends React.Component {
   updateMySushiBudget = () => {
      // this.setState({sushis:{
     // ...this.state.sushis, 
-      // price: mySushiBudget-price
+      // price: 100-price
   // }})
   }
 
@@ -37,6 +37,7 @@ class App extends React.Component {
           sushis={this.state.sushis}
         />
         <Table 
+          sushis={this.state.sushis}
           mySushiBudget={this.state.mySushiBudget}
         />
       </div>

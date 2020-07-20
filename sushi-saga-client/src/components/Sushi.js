@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react'
 
 const Sushi = (props) => {
+  let { id, name, price, img_url, eat } = props;
+
   return (
     <div className="sushi">
       <div className="plate" 
@@ -21,3 +23,7 @@ const Sushi = (props) => {
 }
 
 export default Sushi
+
+
+
+// 
