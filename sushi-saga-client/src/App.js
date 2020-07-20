@@ -5,15 +5,15 @@ import Table from './containers/Table';
 // Endpoint!
 // const API = "http://localhost:3000/sushis"
 
-class App extends Component {
+class App extends React.Component {
 
   state = {
     sushis: [],
-    mySushiBudget: null
+    mySushiBudget: 100
+    eaten: null
   }
 
   // replaced getSushi() with componentDidMount() to properly fetch sushis object from server
-
   componentDidMount(){
     fetch("http://localhost:3000/sushis")
     .then(res => res.json())
@@ -28,15 +28,17 @@ class App extends Component {
   // }})
   }
 
+  // let sushiPrice = 
  
-
   render() {
     return (
       <div className="app">
         <SushiContainer 
           sushis={this.state.sushis}
         />
-        <Table />
+        <Table 
+          mySushiBudget={this.state.mySushiBudget}
+        />
       </div>
     );
   }
